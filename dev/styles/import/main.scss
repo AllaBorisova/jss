@@ -1,0 +1,339 @@
+.section-img {
+  &_main {
+    height: 80rem;
+    margin-top: -14rem;
+    position: relative;
+    z-index: 1;
+    background-image: url(../img/main-img.jpg);
+    @include bg-img;
+    padding-bottom: 10rem;
+  }
+  .container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+    // padding-bottom: 10rem;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 100%;
+    color: #fff;
+    max-width: 44rem;
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+.section-tabs {
+  margin-bottom: 10rem;
+  padding-top: 5rem;
+  border-radius: 5rem 5rem 0 0;
+  background: #fff;
+  margin-top: -5rem;
+  position: relative;
+  z-index: 2;
+  &__links {
+    gap: 0.9rem;
+    @include ul-clean;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    li {
+      a,
+      span {
+        cursor: pointer;
+        border-radius: 100px;
+        padding: 0px 20px;
+        height: 40px;
+        @include flexcc;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 143%;
+        text-transform: uppercase;
+        background: #f5f5f5;
+        @include tr;
+        white-space: nowrap;
+      }
+      &.active a,
+      &.active span {
+        background: $color-primary;
+        color: #fff;
+      }
+      &:hover a,
+      &:hover span {
+        background: $color-primary;
+        color: #fff;
+      }
+    }
+  }
+  &__desc {
+    gap: 8rem;
+    display: grid;
+    grid-template-columns: auto 77.8rem;
+    align-items: flex-end;
+  }
+  &__tab {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  &__about {
+    padding-top: 4.5rem;
+    &-title {
+      font-weight: 400;
+      font-size: 3.2rem;
+      line-height: 120%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4.5rem;
+    }
+    &-text {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 130%;
+      p {
+        margin-bottom: 1.5rem;
+      }
+      ul {
+        @include ul-clean;
+        margin-top: 4.5rem;
+        margin-bottom: 4.5rem;
+        li {
+          padding-left: 3rem;
+          position: relative;
+          &:before {
+            content: '';
+            display: block;
+            width: 0.5rem;
+            height: 0.5rem;
+            background: $color-primary;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+          }
+          &:not(:last-child) {
+            margin-bottom: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+  &__slide {
+    height: 67rem;
+    width: 77.8rem;
+    position: relative;
+    padding: 1rem;
+
+    img {
+      border-radius: 2rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    &-text {
+      border-radius: 10px;
+      max-width: 356px;
+      padding: 30px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 130%;
+      color: #fff;
+      backdrop-filter: blur(150px);
+      background: rgba(255, 255, 255, 0.5);
+      z-index: 2;
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+    }
+  }
+}
+.section-main-slider {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  &-block {
+    margin-bottom: 10rem;
+  }
+  &.slick-slider {
+    margin: 0 -0.5rem;
+  }
+  .slick-list .slick-slide {
+    margin: 0 0.5rem;
+  }
+  &__slide {
+    img {
+      border-radius: 2rem;
+    }
+  }
+}
+.section-steps {
+  margin-bottom: 10rem;
+  .container {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 33% 57%;
+    gap: 10%;
+  }
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 120%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  &__text {
+    font-size: 1.6rem;
+    line-height: 130%;
+  }
+  .button {
+    margin-top: auto;
+  }
+  &__video {
+    height: 67rem;
+    position: relative;
+  }
+  &__thumb {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/video.jpg);
+    @include bg-img;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    .open-video & {
+      display: none;
+    }
+  }
+  &__play {
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    margin-top: -7.5rem;
+    left: 50%;
+    margin-left: -7.5rem;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15rem);
+    @include flexcc;
+    cursor: pointer;
+    @include tr;
+    opacity: 1;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:before {
+      content: '';
+      display: block;
+      @include wh(9rem);
+      border-radius: 50%;
+      background: #e5677c;
+      position: absolute;
+      top: 3rem;
+      left: 3rem;
+    }
+    svg {
+      position: relative;
+      z-index: 5;
+    }
+  }
+  &__frame {
+    display: none;
+    .open-video & {
+      display: block;
+    }
+  }
+}
+.section-banks {
+  padding-top: 10rem;
+  padding-bottom: 7rem;
+  border-radius: 3.8rem;
+  background: #f5f5f5;
+  position: relative;
+  z-index: 2;
+  &__title {
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 130%;
+    text-transform: uppercase;
+    margin-bottom: 4.5rem;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  &__item {
+    @include flexcc;
+    height: 15rem;
+    border-radius: 2rem;
+    background: #fff;
+  }
+}
+.section-map {
+  height: 81rem;
+  position: relative;
+  margin-top: -3rem;
+  z-index: 1;
+  &__map {
+    position: relative;
+    z-index: 1;
+  }
+  .container {
+    position: absolute;
+    top: 13rem;
+    z-index: 2;
+  }
+  &__desc {
+    border-radius: 2rem;
+    width: 55.2rem;
+    background: #fff;
+    padding: 5rem;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  &__link {
+    font-size: 2.4rem;
+  }
+  &__subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: rgba(27, 27, 27, 0.5);
+    margin-bottom: 1rem;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 2.5rem;
+  }
+}

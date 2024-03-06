@@ -1,0 +1,90 @@
+.button {
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  padding: 0rem 3rem;
+  height: 6rem;
+  max-width: 32.7rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: $color-text-light;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 130%;
+  text-transform: uppercase;
+  @include tr;
+  background-color: $color-primary;
+  gap: 2rem;
+  border-radius: 12.8rem;
+  background: $color-primary;
+  @media (max-width: $breakpoint-mobile) {
+    height: 7rem;
+    width: 100%;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  &:hover {
+    box-shadow: 0 5px 12px 0 rgba(255, 172, 28, 0.1),
+      0 21px 21px 0 rgba(255, 172, 28, 0.09),
+      0 47px 28px 0 rgba(255, 172, 28, 0.05),
+      0 84px 34px 0 rgba(255, 172, 28, 0.01),
+      0 131px 37px 0 rgba(255, 172, 28, 0);
+  }
+  &:active {
+    box-shadow: 0 5px 12px 0 rgba(255, 172, 28, 0.1),
+      0 21px 21px 0 rgba(255, 172, 28, 0.09),
+      0 47px 28px 0 rgba(255, 172, 28, 0.05),
+      0 84px 34px 0 rgba(255, 172, 28, 0.01),
+      0 131px 37px 0 rgba(255, 172, 28, 0);
+  }
+
+  &_full {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.button-order {
+  box-shadow: 0 5px 12px 0 rgba(255, 172, 28, 0.1),
+    0 21px 21px 0 rgba(255, 172, 28, 0.09),
+    0 47px 28px 0 rgba(255, 172, 28, 0.05),
+    0 84px 34px 0 rgba(255, 172, 28, 0.01), 0 131px 37px 0 rgba(255, 172, 28, 0);
+  background: url(../img/order-icon.svg) no-repeat center#0455f1;
+  background-position: center bottom 20px;
+  border-radius: 20px;
+  width: 80px;
+  height: 237px;
+  span {
+    display: block;
+    transform: rotate(-90deg);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 94px;
+  }
+}
+.button-choose {
+  box-shadow: 0 5px 12px 0 rgba(255, 172, 28, 0.1),
+    0 21px 21px 0 rgba(255, 172, 28, 0.09),
+    0 47px 28px 0 rgba(255, 172, 28, 0.05),
+    0 84px 34px 0 rgba(255, 172, 28, 0.01), 0 131px 37px 0 rgba(255, 172, 28, 0);
+  background: url(../img/choose-icon.svg) no-repeat center $color-primary;
+  background-position: center bottom 20px;
+  border-radius: 20px;
+  width: 80px;
+  height: 183px;
+  span {
+    display: block;
+    transform: rotate(-90deg);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 49px;
+  }
+}
