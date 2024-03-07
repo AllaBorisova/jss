@@ -8,6 +8,36 @@
     @include bg-img;
     padding-bottom: 10rem;
   }
+  &__subtitle {
+    font-size: 4rem;
+    line-height: 100%;
+    color: #fff;
+    backdrop-filter: blur(15rem);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    padding: 2.9rem 3.9rem;
+    max-width: 33rem;
+  }
+  &_floor {
+    height: 85rem;
+    margin-top: -14rem;
+    position: relative;
+    z-index: 1;
+    // background-image: url(../img/choose-floor.jpg);
+    @include bg-img;
+    padding-bottom: 10rem;
+    .container {
+      position: absolute;
+      bottom: 10rem;
+      width: 100%;
+      margin: 0;
+      padding: 0 5rem;
+      z-index: 7;
+    }
+    &_flats {
+      margin-top: -5rem;
+    }
+  }
   .container {
     display: flex;
     align-items: flex-end;

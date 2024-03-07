@@ -102,13 +102,12 @@
   @include flexcc;
   gap: 0.5rem;
   justify-content: flex-start;
-  a {
+
+  &__link {
     display: flex;
     @include wh(4rem);
     border-radius: 50%;
     @include tr;
-  }
-  &__link {
     svg {
       path {
         @include tr;
