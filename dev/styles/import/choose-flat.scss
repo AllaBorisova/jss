@@ -286,6 +286,12 @@
       }
     }
   }
+  &__flats {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
   &__flats-count {
     font-weight: 600;
     font-size: 1.4rem;
@@ -299,6 +305,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+    padding-right: 1rem;
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+      background-color: #d9d9d9;
+      border-radius: 1rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $color-primary;
+      border-radius: 1rem;
+      width: 0.5rem;
+    }
   }
   &__flat {
     border-radius: 10px;

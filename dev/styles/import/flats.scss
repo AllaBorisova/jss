@@ -46,6 +46,10 @@
   }
 }
 .floor-table {
+  display: none;
+  &.active {
+    display: block;
+  }
   &__tr {
     display: grid;
     grid-template-columns: 0.75fr 0.75fr 1.5fr 1fr 1fr 1fr 1fr;
@@ -58,7 +62,7 @@
     &_tbody {
       border-bottom: 1px solid #c7c7c7;
       @include tr;
-      &.active {
+      &:hover {
         color: #fff;
         background: #1f1f1f;
       }

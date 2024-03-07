@@ -61,7 +61,7 @@ main.main
 				a.button-choose(href="")
 					span Выбрать квартиру
 	.flats__floor-list 
-		.floor-table 
+		.floor-table.active(data-floor=`2`)
 			.floor-table__tr.floor-table__tr_thead
 				.floor-table__th Номер
 				.floor-table__th Этаж
@@ -74,11 +74,35 @@ main.main
 				while count3 < 15
 					- count3 += 1;
 					.floor-table__tr.floor-table__tr_tbody
-						.floor-table__td 32
-						.floor-table__td 9
+						.floor-table__td= `2${count3}`
+						.floor-table__td 2
 						.floor-table__td 3
 						.floor-table__td 69.29 кв.м
 						.floor-table__td -
 						.floor-table__td Продана
 						.floor-table__td
 							a(href="") Подробнее
+		- let count4 = 2;
+			while count4 < 10
+				- count4 += 1;
+				.floor-table(data-floor=`${count4}`)
+					.floor-table__tr.floor-table__tr_thead
+						.floor-table__th Номер
+						.floor-table__th Этаж
+						.floor-table__th Кол-во комнат
+						.floor-table__th Площадь
+						.floor-table__th Цена
+						.floor-table__th Статус
+						.floor-table__th 
+					- let count3 = 1;
+						while count3 < 15
+							- count3 += 1;
+							.floor-table__tr.floor-table__tr_tbody
+								.floor-table__td= `${count4}${count3}`
+								.floor-table__td= `${count4}`
+								.floor-table__td 3
+								.floor-table__td 69.29 кв.м
+								.floor-table__td -
+								.floor-table__td Продана
+								.floor-table__td
+									a(href="") Подробнее

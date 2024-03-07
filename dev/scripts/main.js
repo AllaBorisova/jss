@@ -146,6 +146,15 @@ jQuery(document).ready(function ($) {
     $('.section-tabs__slider ').slick('refresh');
   });
 
+  //like tab flat
+  $('.flat-choose__list-tab').click(function () {
+    const id = $(this).data('id');
+    $('.flat-choose__list-tab').removeClass('active');
+    $('.flat-choose__flats').removeClass('active');
+    $(`.flat-choose__list-tab[data-id=${id}]`).addClass('active');
+    $(`.flat-choose__flats[data-text=${id}]`).addClass('active');
+  });
+
   //show video
   $('.section-steps__play').click(function () {
     $('.section-steps__thumb').hide();
@@ -153,34 +162,44 @@ jQuery(document).ready(function ($) {
   });
 
   //slider floor
-  $('.floor-slider__prev').click(function () {
-    const activeSlide = $(this)
+  function changeFloor(el, type) {
+    const activeSlide = el
       .parent()
       .parent()
       .find('.floor-slider__slide.active');
-    if (activeSlide.prev().length) {
-      activeSlide.removeClass('active');
-      activeSlide.prev().addClass('active');
+    let activeFloor = activeSlide.data('floor');
+
+    if (type === 'prev') {
+      if (activeSlide.prev().length) {
+        activeSlide.removeClass('active');
+        activeSlide.prev().addClass('active');
+        activeFloor--;
+      }
+    } else {
+      if (activeSlide.next().length) {
+        activeSlide.removeClass('active');
+        activeSlide.next().addClass('active');
+        activeFloor++;
+      }
     }
 
-    console.log(activeSlide.data('floor'));
+    if ($('.floor-list').length) {
+      $('.floor-list__item').removeClass('active');
+      $(`.floor-list__item[data-floor=${activeFloor}]`).addClass('active');
+    }
+    if ($('.flats__floor-list ').length) {
+      $('.floor-table').removeClass('active');
+      $(`.floor-table[data-floor=${activeFloor}]`).addClass('active');
+    }
+  }
+
+  $('.floor-slider__prev').click(function () {
+    changeFloor($(this), 'prev');
   });
 
   $('.floor-slider__next').click(function () {
-    const activeSlide = $(this)
-      .parent()
-      .parent()
-      .find('.floor-slider__slide.active');
-
-    if (activeSlide.next().length) {
-      activeSlide.removeClass('active');
-      activeSlide.next().addClass('active');
-    }
-
-    console.log(activeSlide.data('floor'));
+    changeFloor($(this), 'next');
   });
-
-  function changeFloor() {}
 
   //popups
   $('.open-popup-link').magnificPopup({

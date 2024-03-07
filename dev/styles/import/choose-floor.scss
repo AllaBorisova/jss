@@ -76,6 +76,8 @@
   position: relative;
   width: auto;
   height: auto;
+  z-index: 10;
+
   > img {
     position: relative !important;
     z-index: 0 !important;
@@ -95,6 +97,20 @@
     position: absolute;
   }
 }
+.imp-shape {
+  @include tr;
+  opacity: 1;
+  fill: rgba(0, 0, 0, 0);
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 0px;
+  stroke-dasharray: 10 10;
+  stroke-linecap: round;
+  cursor: pointer;
+  &:hover {
+    fill: #ffac1c;
+    opacity: 0.5;
+  }
+}
 .tooltip {
   @include tr;
   position: absolute;
@@ -107,7 +123,7 @@
   left: 50%;
   margin-left: -16.3rem;
   top: 27rem;
-  &_row {
+  &__row {
     font-size: 2rem;
     line-height: 130%;
     font-weight: 400;

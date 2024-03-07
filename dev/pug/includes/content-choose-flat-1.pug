@@ -6,16 +6,22 @@ main.main
 				.flat-choose__tabs 
 					.flat-choose__list 
 						ul 
-							li.active Студия
-							li 1
-							li 2
-							li 3
+							li.flat-choose__list-tab.active(data-id="0") Студия
+							li.flat-choose__list-tab(data-id="1") 1
+							li.flat-choose__list-tab(data-id="2") 2
+							li.flat-choose__list-tab(data-id="3") 3
 					.flat-choose__wrapper 
-						-for(var i = 0; i < 4; ++i)
-							.flat-choose__flats 
-								.flat-choose__flats-count 25 квартир
+						.flat-choose__flats.active(data-text="0")
+							.flat-choose__flats-count 12 квартир
+							.flat-choose__flats-inner 
+								-for(var i = 0; i < 12; ++i)
+									.flat-choose__flat
+										img(src="./img/flat-detail.png" alt="")
+						-for(var j = 1; j < 4; ++j)
+							.flat-choose__flats(data-text=`${j}`)
+								.flat-choose__flats-count= `${j+12} квартир`
 								.flat-choose__flats-inner 
-									-for(var i = 0; i < 10; ++i)
+									-for(var i = 0; i < (9 + j); ++i)
 										.flat-choose__flat
 											img(src="./img/flat-detail.png" alt="")
 					a.button(href="") Все квартиры
@@ -63,9 +69,9 @@ main.main
 						.floor-slider__next
 							<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.3459 14.5L16.3459 18.5L20.3459 14.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M16.3459 29.8333C10.0605 29.8333 6.91782 29.8333 4.96519 27.8806C3.01257 25.928 3.01257 22.7853 3.01257 16.4999C3.01257 10.2145 3.01257 7.07183 4.96519 5.11921C6.91782 3.16658 10.0605 3.16658 16.3459 3.16658C22.6313 3.16658 25.774 3.16658 27.7266 5.1192C29.6792 7.07183 29.6792 10.2145 29.6792 16.4999C29.6792 22.7853 29.6792 25.928 27.7266 27.8806C25.774 29.8333 22.6313 29.8333 16.3459 29.8333Z" stroke="white" stroke-width="1.5" /></svg>
 				.floor-list
-					.floor-list__item.active 10 Этаж
-					- let count2 = 10;
-					while count2 > 2
+					- let count2 = 11;
+					while count2 > 3
 						- count2 -= 1;
-						.floor-list__item= count2  
+						.floor-list__item(data-floor=`${count2}`)= count2  
 							|  Этаж
+					.floor-list__item.active(data-floor="2") 2 Этаж
