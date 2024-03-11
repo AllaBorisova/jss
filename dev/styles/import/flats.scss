@@ -15,6 +15,11 @@
   margin-top: -15rem;
   background: #f5f5f5;
   z-index: 2;
+  @media (max-width: $breakpoint-mobile) {
+    padding: 14rem 1.6rem 1.6rem 1.6rem;
+    padding-bottom: 3rem;
+    border-radius: 0;
+  }
   &__column-right {
     position: relative;
   }
@@ -23,15 +28,46 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3.5rem;
+    .h1 {
+      margin-bottom: 0;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
   }
   &__mini-floor {
     margin-top: 18rem;
     margin-bottom: 4.5rem;
+    @media (max-width: $breakpoint-mobile) {
+      margin: 0;
+    }
   }
   &__columns {
     display: grid;
     grid-template-columns: auto 100rem;
     gap: 10rem;
+    @media (max-width: $breakpoint-mobile) {
+      gap: 3rem;
+      grid-template-columns: 1fr;
+    }
+  }
+  &__column-left {
+    @media (max-width: $breakpoint-mobile) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2.4rem;
+      align-items: center;
+      .floor-slider {
+        grid-column: span 2;
+        width: 100%;
+        justify-content: center;
+        backdrop-filter: blur(150px);
+        background: #fff;
+        padding: 1.6rem;
+      }
+    }
   }
   &__floor-list {
     margin-top: -5rem;
@@ -43,6 +79,14 @@
     padding-bottom: 17rem;
     background: #fff;
     border-radius: 5rem;
+    @media (max-width: $breakpoint-mobile) {
+      padding-bottom: 10rem;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+      padding-top: 0;
+      margin-top: -8rem;
+      z-index: 1;
+    }
   }
 }
 .floor-table {
@@ -56,12 +100,28 @@
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
     &_thead {
       border-bottom: 1px solid #c7c7c7;
+      @media (max-width: $breakpoint-mobile) {
+        display: none;
+      }
     }
     &_tbody {
       border-bottom: 1px solid #c7c7c7;
       @include tr;
+
+      .floor-table__name {
+        display: none;
+        font-weight: 600;
+        @media (max-width: $breakpoint-mobile) {
+          display: block;
+        }
+      }
       &:hover {
         color: #fff;
         background: #1f1f1f;
@@ -71,9 +131,18 @@
   &__th {
     font-weight: 600;
     padding: 1.5rem 2.5rem;
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0;
+    }
   }
   &__td {
     padding: 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0;
+    }
     a {
       color: $color-primary;
       @include tr;
