@@ -5,13 +5,21 @@
   position: relative;
   z-index: 2;
   margin-top: -7rem;
+  @media (max-width: $breakpoint-mobile) {
+    margin-top: -3rem;
+    padding: 0px;
+    .container {
+      margin: 0;
+    }
+  }
   &__wrapper {
     border-radius: 5rem;
     background: $color-text-dark;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
     @media (max-width: $breakpoint-mobile) {
-      padding: 3rem;
+      padding: 3rem 1.6rem;
+      border-radius: 3rem 3rem 0 0;
     }
   }
   &__info {
@@ -21,14 +29,12 @@
     gap: 6.6rem;
     @media (max-width: $breakpoint-mobile) {
       flex-direction: column;
+      gap: 3rem;
     }
   }
   &__logo {
     max-width: 23.7rem;
-    @media (max-width: $breakpoint-mobile) {
-      order: 3;
-      align-self: center;
-    }
+
     img {
       display: block;
     }
@@ -48,6 +54,9 @@
   }
   &__socials {
     margin-left: auto;
+    @media (max-width: $breakpoint-mobile) {
+      margin-left: 0;
+    }
   }
   &__phone {
     font-size: 3.2rem;
@@ -61,12 +70,19 @@
 
   &__menu {
     max-width: 64rem;
+    @media (max-width: $breakpoint-mobile) {
+      max-width: 24rem;
+    }
     ul {
       @include ul-clean;
       display: flex;
       flex-wrap: wrap;
       column-gap: 2rem;
       row-gap: 2.5rem;
+      @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
       li {
         a {
           font-size: 1.6rem;
@@ -87,48 +103,18 @@
     line-height: 125%;
     color: $color-text-light;
     margin-top: 3rem;
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
   &__copyright {
     @media (max-width: $breakpoint-tablet) {
+      font-size: 1.4rem;
     }
   }
   &__made {
     display: flex;
     gap: 0.5rem;
-  }
-}
-
-.socials {
-  @include flexcc;
-  gap: 0.5rem;
-  justify-content: flex-start;
-
-  &__link {
-    display: flex;
-    @include wh(4rem);
-    border-radius: 50%;
-    @include tr;
-    svg {
-      path {
-        @include tr;
-      }
-    }
-    &:hover {
-      svg {
-        path {
-          fill: lighten($color-primary, 5%);
-        }
-      }
-    }
-    &:active {
-      svg {
-        // rect {
-        //   fill: #dd4e15;
-        // }
-        path {
-          fill: lighten($color-primary, 5%);
-        }
-      }
-    }
   }
 }

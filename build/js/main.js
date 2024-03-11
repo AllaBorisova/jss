@@ -103,7 +103,6 @@ jQuery(document).ready(function ($) {
       {
         breakpoint: 1024,
         settings: {
-          arrows: false,
           dots: false,
           // centerMode: true,
           // variableWidth: true,

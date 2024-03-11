@@ -7,6 +7,12 @@
     background-image: url(../img/main-img.jpg);
     @include bg-img;
     padding-bottom: 10rem;
+    @media (max-width: $breakpoint-mobile) {
+      background-image: url(../img/main-img_mobile.jpg);
+      padding-top: 57rem;
+      height: auto;
+      padding-bottom: 0;
+    }
   }
   &__subtitle {
     font-size: 4rem;
@@ -44,18 +50,36 @@
     justify-content: space-between;
     height: 100%;
     // padding-bottom: 10rem;
+    @media (max-width: $breakpoint-mobile) {
+      height: auto;
+      margin: 0;
+      padding: 3.2rem 1.6rem;
+      background: #fff;
+      border-radius: 3rem 3rem 0 0;
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
   &__text {
     font-weight: 400;
-    font-size: 64px;
+    font-size: 6.4rem;
     line-height: 100%;
     color: #fff;
     max-width: 44rem;
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 3.2rem;
+      color: $color-text-dark;
+      margin-bottom: 3rem;
+    }
   }
   &__buttons {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    @media (max-width: $breakpoint-mobile) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 .section-tabs {
@@ -66,6 +90,15 @@
   margin-top: -5rem;
   position: relative;
   z-index: 2;
+  @media (max-width: $breakpoint-mobile) {
+    margin-top: 0;
+    border-radius: 0;
+    padding-top: 0;
+    margin-bottom: 2.4rem;
+    &__block-slider {
+      max-width: calc(100vw - 3.2rem);
+    }
+  }
   &__links {
     gap: 0.9rem;
     @include ul-clean;
@@ -74,16 +107,25 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     margin-bottom: 3rem;
+    @media (max-width: $breakpoint-mobile) {
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
     li {
+      @media (max-width: $breakpoint-mobile) {
+        flex: none;
+      }
       a,
       span {
         cursor: pointer;
-        border-radius: 100px;
-        padding: 0px 20px;
-        height: 40px;
+        border-radius: 10rem;
+        padding: 0 2rem;
+        height: 4rem;
         @include flexcc;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 1.4rem;
         line-height: 143%;
         text-transform: uppercase;
         background: #f5f5f5;
@@ -107,6 +149,10 @@
     display: grid;
     grid-template-columns: auto 77.8rem;
     align-items: flex-end;
+    @media (max-width: $breakpoint-mobile) {
+      gap: 3rem;
+      grid-template-columns: 1fr;
+    }
   }
   &__tab {
     display: none;
@@ -116,25 +162,44 @@
   }
   &__about {
     padding-top: 4.5rem;
+    @media (max-width: $breakpoint-mobile) {
+      padding-top: 0;
+    }
     &-title {
-      font-weight: 400;
+      font-weight: 600;
       font-size: 3.2rem;
       line-height: 120%;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 4.5rem;
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 2.4rem;
+        margin-bottom: 3rem;
+      }
     }
     &-text {
       font-weight: 400;
       font-size: 1.6rem;
       line-height: 130%;
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1.4rem;
+      }
+
       p {
         margin-bottom: 1.5rem;
+        &.large-text {
+          font-size: 2rem;
+          @media (max-width: $breakpoint-mobile) {
+            font-size: 1.6rem;
+          }
+        }
       }
       ul {
         @include ul-clean;
-        margin-top: 4.5rem;
-        margin-bottom: 4.5rem;
+        margin: 4.5rem 0;
+        @media (max-width: $breakpoint-mobile) {
+          margin: 3rem 0;
+        }
         li {
           padding-left: 3rem;
           position: relative;
@@ -161,6 +226,11 @@
     width: 77.8rem;
     position: relative;
     padding: 1rem;
+    overflow: hidden;
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+      height: 29.5rem;
+    }
 
     img {
       border-radius: 2rem;
@@ -173,27 +243,37 @@
       z-index: 1;
     }
     &-text {
-      border-radius: 10px;
-      max-width: 356px;
-      padding: 30px;
+      border-radius: 1rem;
+      max-width: 35.6rem;
+      padding: 3rem;
       font-weight: 400;
-      font-size: 20px;
+      font-size: 2rem;
       line-height: 130%;
       color: #fff;
-      backdrop-filter: blur(150px);
+      backdrop-filter: blur(15rem);
       background: rgba(255, 255, 255, 0.5);
       z-index: 2;
       position: absolute;
       bottom: 1rem;
       left: 1rem;
+      @media (max-width: $breakpoint-mobile) {
+        display: none;
+      }
     }
   }
 }
 .section-main-slider {
   padding-left: 5rem;
   padding-right: 5rem;
+  @media (max-width: $breakpoint-mobile) {
+    padding-left: 1.6rem;
+    padding-right: 0rem;
+  }
   &-block {
     margin-bottom: 10rem;
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: 6rem;
+    }
   }
   &.slick-slider {
     margin: 0 -0.5rem;
@@ -202,6 +282,10 @@
     margin: 0 0.5rem;
   }
   &__slide {
+    @media (max-width: $breakpoint-mobile) {
+      width: 27.3rem;
+      height: 16.4rem;
+    }
     img {
       border-radius: 2rem;
     }
@@ -209,14 +293,25 @@
 }
 .section-steps {
   margin-bottom: 10rem;
+  @media (max-width: $breakpoint-mobile) {
+    margin-bottom: 4rem;
+  }
   .container {
     padding-bottom: 3rem;
     border-bottom: 1px solid #d9d9d9;
+    @media (max-width: $breakpoint-mobile) {
+      padding-bottom: 0px;
+      border-bottom: 0;
+    }
   }
   &__wrapper {
     display: grid;
     grid-template-columns: 33% 57%;
     gap: 10%;
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
   }
   &__desc {
     display: flex;
@@ -230,6 +325,9 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 2.4rem;
+    }
   }
   &__text {
     font-size: 1.6rem;
@@ -241,6 +339,11 @@
   &__video {
     height: 67rem;
     position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    @media (max-width: $breakpoint-mobile) {
+      height: 29.5rem;
+    }
   }
   &__thumb {
     height: 100%;
@@ -256,8 +359,7 @@
     }
   }
   &__play {
-    width: 15rem;
-    height: 15rem;
+    @include wh(15rem);
     position: absolute;
     z-index: 3;
     top: 50%;
@@ -271,6 +373,11 @@
     cursor: pointer;
     @include tr;
     opacity: 1;
+    @media (max-width: $breakpoint-mobile) {
+      @include wh(11.2rem);
+      margin-top: -5.6rem;
+      margin-left: -5.6rem;
+    }
     &:hover {
       opacity: 0.8;
     }
@@ -283,6 +390,11 @@
       position: absolute;
       top: 3rem;
       left: 3rem;
+      @media (max-width: $breakpoint-mobile) {
+        @include wh(6.7rem);
+        top: 2.2rem;
+        left: 2.2rem;
+      }
     }
     svg {
       position: relative;
@@ -303,23 +415,43 @@
   background: #f5f5f5;
   position: relative;
   z-index: 2;
+  @media (max-width: $breakpoint-mobile) {
+    border-radius: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
   &__title {
     font-weight: 600;
     font-size: 3.2rem;
     line-height: 130%;
     text-transform: uppercase;
     margin-bottom: 4.5rem;
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
   }
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   &__item {
     @include flexcc;
     height: 15rem;
     border-radius: 2rem;
     background: #fff;
+    padding: 3.8rem;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      padding: 2rem;
+      height: 7.6rem;
+    }
   }
 }
 .section-map {
@@ -341,29 +473,45 @@
     width: 55.2rem;
     background: #fff;
     padding: 5rem;
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+      padding: 1.6rem;
+    }
   }
   &__title {
     font-weight: 600;
-    font-size: 32px;
+    font-size: 3.2rem;
     line-height: 130%;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+    }
   }
   &__link {
     font-size: 2.4rem;
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.6rem;
+    }
   }
   &__subtitle {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 150%;
-
     color: rgba(27, 27, 27, 0.5);
     margin-bottom: 1rem;
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: 0;
+    }
   }
   &__text {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 150%;
     margin-bottom: 2.5rem;
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: 1.5rem;
+    }
   }
 }
