@@ -266,95 +266,124 @@ textarea {
 //     margin: 0;
 //   }
 // }
-.slick-dots {
-  @include ul-clean;
-  @include flexcc;
-  gap: 2rem;
-  position: absolute;
-  bottom: 4.9rem;
-  gap: 2rem;
-  right: 9.3rem;
-  align-items: flex-end;
-}
-.slick-dots button {
-  opacity: 1;
-  @include tr;
-  // \
-  padding: 0;
-}
-.slick-dots .slick-active button {
-}
-.slick-prev,
-.slick-next {
-  padding: 0;
-  @include wh(3.2rem);
-  position: absolute;
-  bottom: 3.2rem;
-  font-size: 0;
-  z-index: 5;
-  right: 3.2rem;
-  // opacity: 0.5;
-  @include tr;
-  background: none;
-
-  svg path {
-    @include tr-fast;
-  }
-  &:hover {
-    // background-color: #ffa200;
-    svg path {
-      stroke: #ff8d09;
-    }
-  }
-}
-.slick-prev {
-  bottom: 7.4rem;
-}
-// .slick-next {
-//   right: -3rem;
+// .slick-dots {
+//   @include ul-clean;
+//   @include flexcc;
+//   gap: 2rem;
+//   position: absolute;
+//   bottom: 4.9rem;
+//   gap: 2rem;
+//   right: 9.3rem;
+//   align-items: flex-end;
 // }
-
-.slick-prev-main {
-  padding: 0;
-  @include flexcc;
+// .slick-dots button {
+//   opacity: 1;
+//   @include tr;
+//   padding: 0;
+// }
+// .slick-dots .slick-active button {
+// }
+.nav-slider {
   position: absolute;
-  background: none;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 5;
+  font-size: 0;
+  border-radius: 1rem;
+  width: 8.4rem;
+  height: 11.8rem;
+  backdrop-filter: blur(15rem);
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: row;
+    width: 8.9rem;
+    height: 5.1rem;
+    bottom: auto;
+    top: 23.5rem;
+  }
+  &__prev,
+  &__next {
+    padding: 0;
+    @include wh(3.2rem);
+    @include tr;
+    background: none;
+    @media (max-width: $breakpoint-mobile) {
+      @include wh(2.4rem);
+    }
+    svg {
+      max-width: 100%;
+      height: auto;
+      path {
+        @include tr-fast;
+      }
+    }
+    &:hover {
+      svg path {
+        stroke: $color-primary;
+      }
+    }
+  }
+}
+.nav-main-slider {
+  position: absolute;
   bottom: 1.3rem;
-  right: 6rem;
+  right: 5.5rem;
   z-index: 5;
-  display: block;
-  padding: 0;
-  svg path {
-    @include tr-fast;
+  font-size: 0;
+  border-radius: 1rem;
+  width: 8.4rem;
+  height: 11.8rem;
+  backdrop-filter: blur(15rem);
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: row;
+    width: 8.9rem;
+    height: 5.1rem;
+    width: auto;
+    height: auto;
+    position: static;
+    margin-top: 2rem;
+    justify-content: flex-end;
+    margin-right: 1.6rem;
   }
-  &:hover {
-    // background-color: #ffa200;
-    svg path {
-      stroke: #ff8d09;
+  &__prev,
+  &__next {
+    padding: 0;
+    @include wh(3.2rem);
+    @include tr;
+    background: none;
+    @media (max-width: $breakpoint-mobile) {
+      @include wh(2.4rem);
     }
-  }
-}
-.slick-next-main {
-  padding: 0;
-  @include flexcc;
+    svg {
+      max-width: 100%;
+      height: auto;
 
-  position: absolute;
-  background: none;
-  bottom: 5.1rem;
-  right: 6rem;
-  z-index: 5;
-  display: block;
-  padding: 0;
-  svg path {
-    @include tr-fast;
-  }
-  &:hover {
-    // background-color: #ffa200;
-    svg path {
-      stroke: #ff8d09;
+      path {
+        @include tr-fast;
+        @media (max-width: $breakpoint-mobile) {
+          stroke: $color-text-dark;
+        }
+      }
+    }
+    &:hover {
+      svg path {
+        stroke: $color-primary;
+      }
     }
   }
 }
+
 .slick-slides-count {
   position: absolute;
   @include flexcc;
@@ -373,6 +402,18 @@ textarea {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #fff;
+  @media (max-width: $breakpoint-mobile) {
+    color: $color-text-dark;
+    left: 1.6rem;
+    bottom: -5rem;
+    backdrop-filter: none;
+    background: none;
+    font-weight: 300;
+    font-size: 3.2rem;
+    width: auto;
+    height: auto;
+    gap: 1.6rem;
+  }
 }
 .slick-slides-count__first {
   color: $color-text-accent;
@@ -381,6 +422,9 @@ textarea {
   width: 2px;
   height: 2.3rem;
   background: #fff;
+  @media (max-width: $breakpoint-mobile) {
+    background: $color-text-dark;
+  }
 }
 
 // .pagination {

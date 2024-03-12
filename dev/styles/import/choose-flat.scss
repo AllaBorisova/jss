@@ -92,7 +92,7 @@
     border-radius: 1rem;
     background: #fff;
     padding: 5rem;
-    @media (max-width: $breakpoint-mobile) {
+    @media (max-width: $breakpoint-tablet) {
       padding: 1.6rem;
     }
   }
@@ -193,7 +193,10 @@
     border-radius: 50%;
     @include tr;
     background: $color-primary;
-
+    svg {
+      max-width: 2.4rem;
+      height: auto;
+    }
     &:hover,
     &:active {
       background: lighten($color-primary, 5%);
@@ -290,6 +293,9 @@
   &__wrapper {
     margin-bottom: 3rem;
   }
+  &__center {
+    @include flexcc;
+  }
   &__right {
     display: flex;
     flex-direction: column;
@@ -302,6 +308,7 @@
     margin-left: auto;
     @media (max-width: $breakpoint-mobile) {
       padding: 1.6rem;
+      margin-left: 0;
     }
     &-info {
       display: flex;

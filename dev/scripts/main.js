@@ -72,10 +72,11 @@ jQuery(document).ready(function ($) {
     slidesToShow: 2,
     centerMode: false,
     variableWidth: true,
-    prevArrow:
-      '<button type="button" class="slick-prev-main"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 12L14 16L18 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M2.66675 16.0001C2.66675 9.71469 2.66675 6.57199 4.61937 4.61937C6.57199 2.66675 9.71469 2.66675 16.0001 2.66675C22.2855 2.66675 25.4282 2.66675 27.3808 4.61937C29.3334 6.57199 29.3334 9.71469 29.3334 16.0001C29.3334 22.2855 29.3334 25.4282 27.3808 27.3808C25.4282 29.3334 22.2855 29.3334 16.0001 29.3334C9.71469 29.3334 6.57199 29.3334 4.61937 27.3808C2.66675 25.4282 2.66675 22.2855 2.66675 16.0001Z" stroke="white" stroke-width="1.5" /></svg></button>',
-    nextArrow:
-      '<button type="button" class="slick-next-main"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 12L18 16L14 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M2.66675 16.0001C2.66675 9.71469 2.66675 6.57199 4.61937 4.61937C6.57199 2.66675 9.71469 2.66675 16.0001 2.66675C22.2855 2.66675 25.4282 2.66675 27.3808 4.61937C29.3334 6.57199 29.3334 9.71469 29.3334 16.0001C29.3334 22.2855 29.3334 25.4282 27.3808 27.3808C25.4282 29.3334 22.2855 29.3334 16.0001 29.3334C9.71469 29.3334 6.57199 29.3334 4.61937 27.3808C2.66675 25.4282 2.66675 22.2855 2.66675 16.0001Z" stroke="white" stroke-width="1.5" /></svg></button>',
+    arrows: false,
+    // prevArrow:
+    //   '<button type="button" class="slick-prev-main"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 12L14 16L18 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M2.66675 16.0001C2.66675 9.71469 2.66675 6.57199 4.61937 4.61937C6.57199 2.66675 9.71469 2.66675 16.0001 2.66675C22.2855 2.66675 25.4282 2.66675 27.3808 4.61937C29.3334 6.57199 29.3334 9.71469 29.3334 16.0001C29.3334 22.2855 29.3334 25.4282 27.3808 27.3808C25.4282 29.3334 22.2855 29.3334 16.0001 29.3334C9.71469 29.3334 6.57199 29.3334 4.61937 27.3808C2.66675 25.4282 2.66675 22.2855 2.66675 16.0001Z" stroke="white" stroke-width="1.5" /></svg></button>',
+    // nextArrow:
+    //   '<button type="button" class="slick-next-main"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 12L18 16L14 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M2.66675 16.0001C2.66675 9.71469 2.66675 6.57199 4.61937 4.61937C6.57199 2.66675 9.71469 2.66675 16.0001 2.66675C22.2855 2.66675 25.4282 2.66675 27.3808 4.61937C29.3334 6.57199 29.3334 9.71469 29.3334 16.0001C29.3334 22.2855 29.3334 25.4282 27.3808 27.3808C25.4282 29.3334 22.2855 29.3334 16.0001 29.3334C9.71469 29.3334 6.57199 29.3334 4.61937 27.3808C2.66675 25.4282 2.66675 22.2855 2.66675 16.0001Z" stroke="white" stroke-width="1.5" /></svg></button>',
     responsive: [
       {
         breakpoint: 768,
@@ -88,28 +89,37 @@ jQuery(document).ready(function ($) {
       },
     ],
   });
+  $('.nav-main-slider__prev').click(function () {
+    $el.slick('slickPrev');
+  });
 
-  $('.section-tabs__slider ').slick({
+  $('.nav-main-slider__next').click(function () {
+    $el.slick('slickNext');
+  });
+
+  $('.section-tabs__slider').slick({
     dots: false,
     infinite: true,
     speed: 300,
     slidesToShow: 1,
     centerMode: false,
-    prevArrow:
-      '<button type="button" class="slick-prev"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 12L14 16L18 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M2.66675 16.0001C2.66675 9.71469 2.66675 6.57199 4.61937 4.61937C6.57199 2.66675 9.71469 2.66675 16.0001 2.66675C22.2855 2.66675 25.4282 2.66675 27.3808 4.61937C29.3334 6.57199 29.3334 9.71469 29.3334 16.0001C29.3334 22.2855 29.3334 25.4282 27.3808 27.3808C25.4282 29.3334 22.2855 29.3334 16.0001 29.3334C9.71469 29.3334 6.57199 29.3334 4.61937 27.3808C2.66675 25.4282 2.66675 22.2855 2.66675 16.0001Z" stroke="white" stroke-width="1.5" /></svg></button>',
-    nextArrow:
-      '<button type="button" class="slick-next"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 12L18 16L14 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M2.66675 16.0001C2.66675 9.71469 2.66675 6.57199 4.61937 4.61937C6.57199 2.66675 9.71469 2.66675 16.0001 2.66675C22.2855 2.66675 25.4282 2.66675 27.3808 4.61937C29.3334 6.57199 29.3334 9.71469 29.3334 16.0001C29.3334 22.2855 29.3334 25.4282 27.3808 27.3808C25.4282 29.3334 22.2855 29.3334 16.0001 29.3334C9.71469 29.3334 6.57199 29.3334 4.61937 27.3808C2.66675 25.4282 2.66675 22.2855 2.66675 16.0001Z" stroke="white" stroke-width="1.5" /></svg></button>',
+    prevArrow: $('.nav-slider__prev'),
+    nextArrow: $('.nav-slider__next'),
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           dots: false,
-          // centerMode: true,
-          // variableWidth: true,
-          // slidesToShow: 3,
         },
       },
     ],
+  });
+  $('.nav-slider__prev').click(function () {
+    $('.section-tabs__slider').slick('slickPrev');
+  });
+
+  $('.nav-slider__next').click(function () {
+    $('.section-tabs__slider').slick('slickNext');
   });
   // $('.section-slider').slick({
   //   dots: false,
