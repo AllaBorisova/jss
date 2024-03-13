@@ -47,11 +47,9 @@ main.main
 								.flat-choose-params__name Корпус
 								.flat-choose-params__value 1
 							.flat-choose-params__block
-								.flat-choose-params__name Стоимость
-								.flat-choose-params__value от 19 516 316 ₽
-							.flat-choose-params__block
-								.flat-choose-params__name В ипотеку
-								.flat-choose-params__value от 81 883 ₽мес
+								.flat-choose-params__name Номер квартиры
+								.flat-choose-params__value 136
+							
 			.flat-choose__right
 				.floor-slider.floor-slider_choose-flat
 					.floor-slider__floor
@@ -76,3 +74,26 @@ main.main
 						.floor-list__item(data-floor=`${count2}`)= count2  
 							|  Этаж
 					.floor-list__item.active(data-floor="2") 2 Этаж
+	.flat-contacts 
+		.container 
+			.flat-contacts__inner 
+				.flat-contacts__info 
+					.flat-contacts__phone
+						a(href="tel:8 4012 52 36 33") 8 4012 52 36 33
+					.flat-contacts__subtitle Отдел продаж на объекте
+					.flat-contacts__phone
+						a(href="tel:8 4012 52 36 33") 8 4012 52 36 33
+					.flat-contacts__text Новый жилой комплекс «Нахимовский квартал» строится в районе популярной элитной застройки на ул. Артиллерийской. Во второй очереди будет возведён 324 — квартирный жилой дом этажностью 10 этажей. Проектом предусмотрены повышенные требования к комфорту квартир и общедомового пространства: просторные планировки и большие кухни, автономное отопление, два лифта на секцию, всего 4 квартиры на площадке, выход из подъездов на обе стороны, внутренний двор без машин, большое количество парковочных мест, благоустройство с прогулочными зонами, зонами отдыха, спортивными и детскими игровыми площадками. Жилой комплекс выдержан в современном стиле и гармонирует с уже существующей застройкой микрорайона.
+				.flat-contacts__form.form 
+					.form__title Укажите свои контакты и мы Вам перезвоним:
+					form(action="")
+						.form__block 
+							label.form__label ФИО
+							input.form__input(type="text" value="")
+						.form__block 
+							label.form__label Телефон
+							input.form__input(type="text" value="")
+						.form__block 
+							button.button() Заказать звонок
+						.form__agree Нажимая кнопку Заказать звонок Вы соглашаетесь с 
+							a(href="") Правилами обработки персональных данных
