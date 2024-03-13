@@ -23,6 +23,7 @@
   @media (max-width: $breakpoint-mobile) {
     width: 100%;
     padding: 1.5rem;
+    max-width: 100%;
   }
   &:hover {
     box-shadow: 0 5px 12px 0 rgba(255, 172, 28, 0.1),
