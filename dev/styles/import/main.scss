@@ -4,14 +4,16 @@
     margin-top: -14rem;
     position: relative;
     z-index: 1;
-    background-image: url(../img/08-min.jpg);
+    background-image: url(../img/main-img.jpg);
     @include bg-img;
     padding-bottom: 10rem;
     @media (max-width: $breakpoint-mobile) {
-      // background-image: url(../img/main-img_mobile.jpg);
+      background-image: url(../img/main-img_mobile.jpg);
       padding-top: 57rem;
       height: auto;
       padding-bottom: 0;
+      background-size: contain;
+      background-position: top center;
     }
   }
   &__subtitle {
